@@ -1,0 +1,15 @@
+C:\Users\sokald\source\repos\BankWindow\BankWindowsWPF\obj\Debug\BankWindowsWPF.csprojResolveAssemblyReference.cache
+C:\Users\sokald\source\repos\BankWindow\BankWindowsWPF\obj\Debug\MainWindow.g.cs
+C:\Users\sokald\source\repos\BankWindow\BankWindowsWPF\obj\Debug\App.g.cs
+C:\Users\sokald\source\repos\BankWindow\BankWindowsWPF\obj\Debug\BankWindowsWPF_MarkupCompile.cache
+C:\Users\sokald\source\repos\BankWindow\BankWindowsWPF\obj\Debug\BankWindowsWPF_MarkupCompile.lref
+C:\Users\sokald\source\repos\BankWindow\BankWindowsWPF\bin\Debug\BankWindowsWPF.exe.config
+C:\Users\sokald\source\repos\BankWindow\BankWindowsWPF\bin\Debug\BankWindowsWPF.exe
+C:\Users\sokald\source\repos\BankWindow\BankWindowsWPF\bin\Debug\BankWindowsWPF.pdb
+C:\Users\sokald\source\repos\BankWindow\BankWindowsWPF\obj\Debug\MainWindow.baml
+C:\Users\sokald\source\repos\BankWindow\BankWindowsWPF\obj\Debug\BankWindowsWPF.g.resources
+C:\Users\sokald\source\repos\BankWindow\BankWindowsWPF\obj\Debug\BankWindowsWPF.Properties.Resources.resources
+C:\Users\sokald\source\repos\BankWindow\BankWindowsWPF\obj\Debug\BankWindowsWPF.csproj.GenerateResource.Cache
+C:\Users\sokald\source\repos\BankWindow\BankWindowsWPF\obj\Debug\BankWindowsWPF.csproj.CoreCompileInputs.cache
+C:\Users\sokald\source\repos\BankWindow\BankWindowsWPF\obj\Debug\BankWindowsWPF.exe
+C:\Users\sokald\source\repos\BankWindow\BankWindowsWPF\obj\Debug\BankWindowsWPF.pdb

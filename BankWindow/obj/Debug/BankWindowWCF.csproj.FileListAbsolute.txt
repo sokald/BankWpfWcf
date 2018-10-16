@@ -1,0 +1,7 @@
+C:\Users\sokald\source\repos\BankWindow\BankWindow\bin\BankWindow.dll.config
+C:\Users\sokald\source\repos\BankWindow\BankWindow\bin\BankWindow.dll
+C:\Users\sokald\source\repos\BankWindow\BankWindow\bin\BankWindow.pdb
+C:\Users\sokald\source\repos\BankWindow\BankWindow\obj\Debug\BankWindowWCF.csprojResolveAssemblyReference.cache
+C:\Users\sokald\source\repos\BankWindow\BankWindow\obj\Debug\BankWindowWCF.csproj.CoreCompileInputs.cache
+C:\Users\sokald\source\repos\BankWindow\BankWindow\obj\Debug\BankWindow.dll
+C:\Users\sokald\source\repos\BankWindow\BankWindow\obj\Debug\BankWindow.pdb
