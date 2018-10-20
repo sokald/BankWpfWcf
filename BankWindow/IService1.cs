@@ -13,22 +13,17 @@ namespace BankWindow
     [ServiceContract]
     public interface IService1
     {
-        //[OperationContract]
-        //string GetData(int value);
-
-        //[OperationContract]
-        //CompositeType GetDataUsingDataContract(CompositeType composite);
-
         [OperationContract]
         string SendAccount(Account NewAccount);
 
         [OperationContract]
         DataSet ShowAccount();
 
+        [OperationContract]
+        DataSet ShowOperation(string NrAccount);
         //[OperationContract]
         //DataSet ShowAccount(Account NrAccount);
     }
-
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.
     [DataContract]
@@ -42,7 +37,7 @@ namespace BankWindow
         int NrHouse;
         int PostCode;
         double AccountBalance;
-        
+
         [DataMember]
         public int NrAccount1 { get => NrAccount; set => NrAccount = value; }
         [DataMember]

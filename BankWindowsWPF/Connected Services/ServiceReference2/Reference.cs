@@ -8,11 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BankWindowsWPF.ServiceReferenceToDataBaseBank2 {
+namespace BankWindowsWPF.ServiceReference2 {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReferenceToDataBaseBank2.IService1")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference2.IService1")]
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SendAccount", ReplyAction="http://tempuri.org/IService1/SendAccountResponse")]
@@ -35,12 +35,12 @@ namespace BankWindowsWPF.ServiceReferenceToDataBaseBank2 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IService1Channel : BankWindowsWPF.ServiceReferenceToDataBaseBank2.IService1, System.ServiceModel.IClientChannel {
+    public interface IService1Channel : BankWindowsWPF.ServiceReference2.IService1, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<BankWindowsWPF.ServiceReferenceToDataBaseBank2.IService1>, BankWindowsWPF.ServiceReferenceToDataBaseBank2.IService1 {
+    public partial class Service1Client : System.ServiceModel.ClientBase<BankWindowsWPF.ServiceReference2.IService1>, BankWindowsWPF.ServiceReference2.IService1 {
         
         public Service1Client() {
         }

@@ -22,26 +22,30 @@ namespace BankWindowsWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        ServiceReferenceToDataBaseBank2.Service1Client obj = new ServiceReferenceToDataBaseBank2.Service1Client();
-
+        ServiceReference1.Service1Client obj = new ServiceReference1.Service1Client();
+        
         public MainWindow()
         {
             InitializeComponent();
             ShowData();
         }
 
+        // show account in dataGrid
         public void ShowData()
         {
             DataSet ds = new DataSet();
+            //DataTable ds = new DataTable()
             ds = obj.ShowAccount();
-            DataGridAccount.DataContext = ds.Tables[0];
-            //DataGridAccount.CanUserResizeColumns
+            
+            DataGridAccount.AutoGenerateColumns = true;           
+            DataGridAccount.ItemsSource = ds.Tables[0].DefaultView;
         }
 
+        // save new account in database
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ServiceReferenceToDataBaseBank2.Account NewAccount = new ServiceReferenceToDataBaseBank2.Account();
-
+            //ServiceReferenceToDataBaseBank2.Account NewAccount = new ServiceReferenceToDataBaseBank2.Account();
+            ServiceReference1.Account NewAccount = new ServiceReference1.Account();
             //NewAccount.NrAccount1 = null;
             NewAccount.FirstName1 = TextBoxFirstName.Text;
             NewAccount.LastName1 = TextBoxLastName.Text;
@@ -53,7 +57,22 @@ namespace BankWindowsWPF
 
             obj.SendAccount(NewAccount);
             ShowData();
+        }
 
+        // SelectAccount to show operation
+        private void SelectAccount(object sender, SelectionChangedEventArgs e)
+        {
+            DataGrid gd = (DataGrid)sender;
+            DataRowView AccountSelect = gd.SelectedItem as DataRowView;
+            string nrAccount = AccountSelect["NrAccount"].ToString();
+            
+
+            DataSet ds = new DataSet();
+            //DataTable ds = new DataTable()
+            ds = obj.ShowOperation(nrAccount);
+
+            DataGridOperation.AutoGenerateColumns = true;
+            DataGridOperation.ItemsSource = ds.Tables[0].DefaultView;
         }
     }
 }

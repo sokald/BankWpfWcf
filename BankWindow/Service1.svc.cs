@@ -53,5 +53,18 @@ namespace BankWindow
             con.Close();
             return Message;
         }
+
+        public DataSet ShowOperation(string NrAccount)
+        {
+            SqlConnection con = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Bank2;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Select * from TableTransaction Where NrAccount ="+NrAccount, con);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            sda.Fill(ds);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            return ds;
+        }
     }
 }

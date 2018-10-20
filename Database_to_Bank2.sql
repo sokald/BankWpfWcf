@@ -40,6 +40,8 @@ CREATE TABLE dbo.TableTransaction
 );
 GO
 
+SELECT * FROM dbo.Account WHERE dbo.Account.NrAccount = 10000000000000000000000003
+
 --Primary Key in table TableTransaction
 --PK
 ALTER TABLE dbo.TableTransaction
