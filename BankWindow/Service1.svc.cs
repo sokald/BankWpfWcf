@@ -14,6 +14,7 @@ namespace BankWindow
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
+        //show all accounts
         public DataSet ShowAccount()
         {
             SqlConnection con = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Bank2;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
@@ -27,6 +28,7 @@ namespace BankWindow
             return ds;
         }
 
+        // save new accoutn in the database
         public string SendAccount(Account NewAccount)
         {
             string Message;
@@ -54,6 +56,7 @@ namespace BankWindow
             return Message;
         }
 
+        // show alle operation for one account
         public DataSet ShowOperation(string NrAccount)
         {
             SqlConnection con = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Bank2;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
@@ -65,6 +68,31 @@ namespace BankWindow
             cmd.ExecuteNonQuery();
             con.Close();
             return ds;
+        }
+
+        // save new operation for one account
+        public string SendOperation(Operation operation)
+        {
+            string Message;
+            SqlConnection con = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Bank2;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            con.Open();
+            SqlCommand cmd = new SqlCommand("insert into TableTransaction(NrAccount,Amount,DateTransaction) values(@NrAccount,@Amount,@DateTransaction)", con);
+            //cmd.Parameters.AddWithValue("@NrAccount", NewAccount.NrAccount1);
+            cmd.Parameters.AddWithValue("@NrAccount", operation.NrAccount1);
+            cmd.Parameters.AddWithValue("@Amount", operation.Amount1);
+            cmd.Parameters.AddWithValue("@DateTransaction", operation.DateTransaction1);
+            int result = cmd.ExecuteNonQuery();
+            if (result == 1)
+            {
+                Message = " Details inserted successfully";
+            }
+            else
+            {
+                Message = " Details not inserted successfully";
+            }
+            con.Close();
+            return Message;
+            //return " public string SendOperation(Operation operation)";
         }
     }
 }

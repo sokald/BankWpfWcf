@@ -23,6 +23,9 @@ namespace BankWindow
         DataSet ShowOperation(string NrAccount);
         //[OperationContract]
         //DataSet ShowAccount(Account NrAccount);
+
+        [OperationContract]
+        string SendOperation(Operation operation);
     }
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.
@@ -39,20 +42,79 @@ namespace BankWindow
         double AccountBalance;
 
         [DataMember]
-        public int NrAccount1 { get => NrAccount; set => NrAccount = value; }
+        public int NrAccount1
+        {
+            get { return NrAccount; }
+            set { NrAccount = value; }
+        }
         [DataMember]
-        public string FirstName1 { get => FirstName; set => FirstName = value; }
+        public string FirstName1
+        {
+            get { return FirstName; }
+            set { FirstName = value; }
+        }
         [DataMember]
-        public string LastName1 { get => LastName; set => LastName = value; }
+        public string LastName1
+        {
+            get { return LastName; }
+            set { LastName = value; }
+        }
         [DataMember]
-        public string City1 { get => City; set => City = value; }
+        public string City1
+        {
+            get { return City; }
+            set { City = value; }
+        }
         [DataMember]
-        public string Street1 { get => Street; set => Street = value; }
+        public string Street1
+        {
+            get { return Street; }
+            set { Street = value; }
+        }
         [DataMember]
-        public int NrHouse1 { get => NrHouse; set => NrHouse = value; }
+        public int NrHouse1
+        {
+            get { return NrHouse; }
+            set { NrHouse = value; }
+        }
         [DataMember]
-        public int PostCode1 { get => PostCode; set => PostCode = value; }
+        public int PostCode1
+        {
+            get { return PostCode; }
+            set { PostCode = value; }
+        }
         [DataMember]
-        public double AccountBalance1 { get => AccountBalance; set => AccountBalance = value; }
+        public double AccountBalance1
+        {
+            get { return AccountBalance; }
+            set { AccountBalance = value; }
+        }
+    }
+
+    [DataContract]
+    public class Operation
+    {
+        string NrAccount;
+        int Amount;
+        DateTime DateTransaction;
+
+        [DataMember]
+        public int NrAccount1
+        {
+            get { return NrAccount; }
+            set { NrAccount = value; }
+        }
+        [DataMember]
+        public int Amount1
+        {
+            get { return Amount; }
+            set { Amount = value; }
+        }
+        [DataMember]
+        public DateTime DateTransaction1
+        {
+            get { return DateTransaction; }
+            set { DateTransaction = value; }
+        }
     }
 }

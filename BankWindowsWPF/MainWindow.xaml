@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="585" Width="1121">
     <Grid>
-        <Label x:Name="NrAccount" Content="NrAccount" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="NrAccount2" Content="NrAccount" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Label x:Name="FirstName" Content="FirstName" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top"/>
         <Label x:Name="LastName" Content="LastName" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top"/>
         <Label x:Name="City" Content="City" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top"/>
@@ -29,9 +29,9 @@
         <DataGrid x:Name="DataGridOperation" HorizontalAlignment="Left" Height="531" Margin="821,13,0,0" VerticalAlignment="Top" Width="282"/>
         <Label x:Name="LabelAmount" Content="Amount:" HorizontalAlignment="Left" Margin="576,65,0,0" VerticalAlignment="Top"/>
         <Label x:Name="LabelDate" Content="Date" HorizontalAlignment="Left" Margin="576,114,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.789,0.269"/>
-        <DatePicker HorizontalAlignment="Left" Margin="673,114,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="673,68,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="ButtonSaveOperation" Content="Zapisz operacje" HorizontalAlignment="Left" Margin="673,166,0,0" VerticalAlignment="Top" Width="75"/>
+        <DatePicker x:Name="DateOperation" HorizontalAlignment="Left" Margin="673,114,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBoxOperationAmount" HorizontalAlignment="Left" Height="23" Margin="673,68,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="ButtonSaveOperation" Content="Zapisz operacje" HorizontalAlignment="Left" Margin="673,166,0,0" VerticalAlignment="Top" Width="75" Click="ButtonSaveOperation_Click"/>
 
     </Grid>
 </Window>

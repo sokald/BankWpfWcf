@@ -13,4 +13,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Account" nillable="true" type="tns:Account" />
+  <xs:complexType name="Operation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount1" type="xs:int" />
+      <xs:element minOccurs="0" name="DateTransaction1" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NrAccount1" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Operation" nillable="true" type="tns:Operation" />
 </xs:schema>

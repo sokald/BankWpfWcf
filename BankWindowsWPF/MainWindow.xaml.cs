@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,9 @@ namespace BankWindowsWPF
     public partial class MainWindow : Window
     {
         ServiceReference1.Service1Client obj = new ServiceReference1.Service1Client();
-        
+        ServiceReferenceToDataBaseBank2.Service1Client obj2 = new ServiceReferenceToDataBaseBank2.Service1Client();
+        //ServiceReference2.Service1Client obj3 = new ServiceReference2.Service1Client();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -46,6 +49,7 @@ namespace BankWindowsWPF
         {
             //ServiceReferenceToDataBaseBank2.Account NewAccount = new ServiceReferenceToDataBaseBank2.Account();
             ServiceReference1.Account NewAccount = new ServiceReference1.Account();
+
             //NewAccount.NrAccount1 = null;
             NewAccount.FirstName1 = TextBoxFirstName.Text;
             NewAccount.LastName1 = TextBoxLastName.Text;
@@ -59,20 +63,37 @@ namespace BankWindowsWPF
             ShowData();
         }
 
+        public DataRowView AccountSelect;
         // SelectAccount to show operation
         private void SelectAccount(object sender, SelectionChangedEventArgs e)
         {
             DataGrid gd = (DataGrid)sender;
-            DataRowView AccountSelect = gd.SelectedItem as DataRowView;
-            string nrAccount = AccountSelect["NrAccount"].ToString();
+            AccountSelect = gd.SelectedItem as DataRowView;
+            //string NrAccount = AccountSelect["NrAccount"].ToString();
             
-
+            
             DataSet ds = new DataSet();
             //DataTable ds = new DataTable()
-            ds = obj.ShowOperation(nrAccount);
+            ds = obj.ShowOperation(AccountSelect["NrAccount"].ToString());
 
             DataGridOperation.AutoGenerateColumns = true;
             DataGridOperation.ItemsSource = ds.Tables[0].DefaultView;
+        }
+
+        private void ButtonSaveOperation_Click(object sender, RoutedEventArgs e)
+        {
+            //ServiceReferenceToDataBaseBank2.Account NewAccount = new ServiceReferenceToDataBaseBank2.Account();
+            ServiceReference1.Operation NewOperation = new ServiceReference1.Operation();
+
+            string NrAccount = AccountSelect["NrAccount"].ToString();
+
+            NewOperation.NrAccount1 = NrAccount;
+            NewOperation.Amount1 = int.Parse(TextBoxOperationAmount.ToString());
+            NewOperation.DateTransaction1 = DateOperation.SelectedDate.Value.Date;
+
+            obj.SendOperation(NewOperation);
+            ShowData();
+            //SelectAccount();
         }
     }
 }

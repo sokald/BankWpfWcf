@@ -40,6 +40,10 @@ CREATE TABLE dbo.TableTransaction
 );
 GO
 
+-- insert data in to table Account
+insert into TableTransaction(NrAccount,Amount,DateTransaction) values(10000000000000000000000000,1,'10.10.2001')
+
+
 SELECT * FROM dbo.Account WHERE dbo.Account.NrAccount = 10000000000000000000000003
 
 --Primary Key in table TableTransaction

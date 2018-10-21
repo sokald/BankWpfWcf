@@ -13,6 +13,5 @@ C:\Users\sokald\source\repos\BankWindow\BankWindowsWPF\obj\Debug\BankWindowsWPF.
 C:\Users\sokald\source\repos\BankWindow\BankWindowsWPF\obj\Debug\BankWindowsWPF.csproj.CoreCompileInputs.cache
 C:\Users\sokald\source\repos\BankWindow\BankWindowsWPF\obj\Debug\BankWindowsWPF.exe
 C:\Users\sokald\source\repos\BankWindow\BankWindowsWPF\obj\Debug\BankWindowsWPF.pdb
-C:\Users\sokald\source\repos\BankWindow\BankWindowsWPF\bin\Debug\BankWindow.dll
 C:\Users\sokald\source\repos\BankWindow\BankWindowsWPF\bin\Debug\BankWindow.pdb
 C:\Users\sokald\source\repos\BankWindow\BankWindowsWPF\bin\Debug\BankWindow.dll.config

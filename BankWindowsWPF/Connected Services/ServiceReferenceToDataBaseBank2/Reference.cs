@@ -9,7 +9,86 @@
 //------------------------------------------------------------------------------
 
 namespace BankWindowsWPF.ServiceReferenceToDataBaseBank2 {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Operation", Namespace="http://schemas.datacontract.org/2004/07/BankWindow")]
+    [System.SerializableAttribute()]
+    public partial class Operation : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int Amount1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateTransaction1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int NrAccount1Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Amount1 {
+            get {
+                return this.Amount1Field;
+            }
+            set {
+                if ((this.Amount1Field.Equals(value) != true)) {
+                    this.Amount1Field = value;
+                    this.RaisePropertyChanged("Amount1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DateTransaction1 {
+            get {
+                return this.DateTransaction1Field;
+            }
+            set {
+                if ((this.DateTransaction1Field.Equals(value) != true)) {
+                    this.DateTransaction1Field = value;
+                    this.RaisePropertyChanged("DateTransaction1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int NrAccount1 {
+            get {
+                return this.NrAccount1Field;
+            }
+            set {
+                if ((this.NrAccount1Field.Equals(value) != true)) {
+                    this.NrAccount1Field = value;
+                    this.RaisePropertyChanged("NrAccount1");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReferenceToDataBaseBank2.IService1")]
@@ -32,6 +111,12 @@ namespace BankWindowsWPF.ServiceReferenceToDataBaseBank2 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ShowOperation", ReplyAction="http://tempuri.org/IService1/ShowOperationResponse")]
         System.Threading.Tasks.Task<System.Data.DataSet> ShowOperationAsync(string NrAccount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SendOperation", ReplyAction="http://tempuri.org/IService1/SendOperationResponse")]
+        string SendOperation(BankWindowsWPF.ServiceReferenceToDataBaseBank2.Operation operation);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SendOperation", ReplyAction="http://tempuri.org/IService1/SendOperationResponse")]
+        System.Threading.Tasks.Task<string> SendOperationAsync(BankWindowsWPF.ServiceReferenceToDataBaseBank2.Operation operation);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -83,6 +168,14 @@ namespace BankWindowsWPF.ServiceReferenceToDataBaseBank2 {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> ShowOperationAsync(string NrAccount) {
             return base.Channel.ShowOperationAsync(NrAccount);
+        }
+        
+        public string SendOperation(BankWindowsWPF.ServiceReferenceToDataBaseBank2.Operation operation) {
+            return base.Channel.SendOperation(operation);
+        }
+        
+        public System.Threading.Tasks.Task<string> SendOperationAsync(BankWindowsWPF.ServiceReferenceToDataBaseBank2.Operation operation) {
+            return base.Channel.SendOperationAsync(operation);
         }
     }
 }

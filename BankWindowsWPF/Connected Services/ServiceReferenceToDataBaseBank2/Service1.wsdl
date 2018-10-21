@@ -26,6 +26,12 @@
   <wsdl:message name="IService1_ShowOperation_OutputMessage">
     <wsdl:part name="parameters" element="tns:ShowOperationResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_SendOperation_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendOperation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SendOperation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendOperationResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="SendAccount">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/SendAccount" message="tns:IService1_SendAccount_InputMessage" />
@@ -38,6 +44,10 @@
     <wsdl:operation name="ShowOperation">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ShowOperation" message="tns:IService1_ShowOperation_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ShowOperationResponse" message="tns:IService1_ShowOperation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendOperation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SendOperation" message="tns:IService1_SendOperation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SendOperationResponse" message="tns:IService1_SendOperation_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -62,6 +72,15 @@
     </wsdl:operation>
     <wsdl:operation name="ShowOperation">
       <soap:operation soapAction="http://tempuri.org/IService1/ShowOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendOperation">
+      <soap:operation soapAction="http://tempuri.org/IService1/SendOperation" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -15,36 +15,21 @@ namespace BankWindowsWPF.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Account", Namespace="http://schemas.datacontract.org/2004/07/BankWindow")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Operation", Namespace="http://schemas.datacontract.org/2004/07/BankWindow")]
     [System.SerializableAttribute()]
-    public partial class Account : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Operation : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double AccountBalance1Field;
+        private int Amount1Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string City1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FirstName1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LastName1Field;
+        private System.DateTime DateTransaction1Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int NrAccount1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int NrHouse1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PostCode1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Street1Field;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -57,53 +42,27 @@ namespace BankWindowsWPF.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public double AccountBalance1 {
+        public int Amount1 {
             get {
-                return this.AccountBalance1Field;
+                return this.Amount1Field;
             }
             set {
-                if ((this.AccountBalance1Field.Equals(value) != true)) {
-                    this.AccountBalance1Field = value;
-                    this.RaisePropertyChanged("AccountBalance1");
+                if ((this.Amount1Field.Equals(value) != true)) {
+                    this.Amount1Field = value;
+                    this.RaisePropertyChanged("Amount1");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string City1 {
+        public System.DateTime DateTransaction1 {
             get {
-                return this.City1Field;
+                return this.DateTransaction1Field;
             }
             set {
-                if ((object.ReferenceEquals(this.City1Field, value) != true)) {
-                    this.City1Field = value;
-                    this.RaisePropertyChanged("City1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FirstName1 {
-            get {
-                return this.FirstName1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FirstName1Field, value) != true)) {
-                    this.FirstName1Field = value;
-                    this.RaisePropertyChanged("FirstName1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastName1 {
-            get {
-                return this.LastName1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LastName1Field, value) != true)) {
-                    this.LastName1Field = value;
-                    this.RaisePropertyChanged("LastName1");
+                if ((this.DateTransaction1Field.Equals(value) != true)) {
+                    this.DateTransaction1Field = value;
+                    this.RaisePropertyChanged("DateTransaction1");
                 }
             }
         }
@@ -117,45 +76,6 @@ namespace BankWindowsWPF.ServiceReference1 {
                 if ((this.NrAccount1Field.Equals(value) != true)) {
                     this.NrAccount1Field = value;
                     this.RaisePropertyChanged("NrAccount1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int NrHouse1 {
-            get {
-                return this.NrHouse1Field;
-            }
-            set {
-                if ((this.NrHouse1Field.Equals(value) != true)) {
-                    this.NrHouse1Field = value;
-                    this.RaisePropertyChanged("NrHouse1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int PostCode1 {
-            get {
-                return this.PostCode1Field;
-            }
-            set {
-                if ((this.PostCode1Field.Equals(value) != true)) {
-                    this.PostCode1Field = value;
-                    this.RaisePropertyChanged("PostCode1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Street1 {
-            get {
-                return this.Street1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Street1Field, value) != true)) {
-                    this.Street1Field = value;
-                    this.RaisePropertyChanged("Street1");
                 }
             }
         }
@@ -175,10 +95,10 @@ namespace BankWindowsWPF.ServiceReference1 {
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SendAccount", ReplyAction="http://tempuri.org/IService1/SendAccountResponse")]
-        string SendAccount(BankWindowsWPF.ServiceReference1.Account NewAccount);
+        string SendAccount(BankWindow.Account NewAccount);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SendAccount", ReplyAction="http://tempuri.org/IService1/SendAccountResponse")]
-        System.Threading.Tasks.Task<string> SendAccountAsync(BankWindowsWPF.ServiceReference1.Account NewAccount);
+        System.Threading.Tasks.Task<string> SendAccountAsync(BankWindow.Account NewAccount);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ShowAccount", ReplyAction="http://tempuri.org/IService1/ShowAccountResponse")]
         System.Data.DataSet ShowAccount();
@@ -191,6 +111,12 @@ namespace BankWindowsWPF.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ShowOperation", ReplyAction="http://tempuri.org/IService1/ShowOperationResponse")]
         System.Threading.Tasks.Task<System.Data.DataSet> ShowOperationAsync(string NrAccount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SendOperation", ReplyAction="http://tempuri.org/IService1/SendOperationResponse")]
+        string SendOperation(BankWindowsWPF.ServiceReference1.Operation operation);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SendOperation", ReplyAction="http://tempuri.org/IService1/SendOperationResponse")]
+        System.Threading.Tasks.Task<string> SendOperationAsync(BankWindowsWPF.ServiceReference1.Operation operation);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -220,11 +146,11 @@ namespace BankWindowsWPF.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public string SendAccount(BankWindowsWPF.ServiceReference1.Account NewAccount) {
+        public string SendAccount(BankWindow.Account NewAccount) {
             return base.Channel.SendAccount(NewAccount);
         }
         
-        public System.Threading.Tasks.Task<string> SendAccountAsync(BankWindowsWPF.ServiceReference1.Account NewAccount) {
+        public System.Threading.Tasks.Task<string> SendAccountAsync(BankWindow.Account NewAccount) {
             return base.Channel.SendAccountAsync(NewAccount);
         }
         
@@ -242,6 +168,14 @@ namespace BankWindowsWPF.ServiceReference1 {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> ShowOperationAsync(string NrAccount) {
             return base.Channel.ShowOperationAsync(NrAccount);
+        }
+        
+        public string SendOperation(BankWindowsWPF.ServiceReference1.Operation operation) {
+            return base.Channel.SendOperation(operation);
+        }
+        
+        public System.Threading.Tasks.Task<string> SendOperationAsync(BankWindowsWPF.ServiceReference1.Operation operation) {
+            return base.Channel.SendOperationAsync(operation);
         }
     }
 }
