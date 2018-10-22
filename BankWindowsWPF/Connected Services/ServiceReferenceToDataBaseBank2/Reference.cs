@@ -29,7 +29,7 @@ namespace BankWindowsWPF.ServiceReferenceToDataBaseBank2 {
         private System.DateTime DateTransaction1Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int NrAccount1Field;
+        private string NrAccount1Field;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -68,12 +68,12 @@ namespace BankWindowsWPF.ServiceReferenceToDataBaseBank2 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int NrAccount1 {
+        public string NrAccount1 {
             get {
                 return this.NrAccount1Field;
             }
             set {
-                if ((this.NrAccount1Field.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.NrAccount1Field, value) != true)) {
                     this.NrAccount1Field = value;
                     this.RaisePropertyChanged("NrAccount1");
                 }

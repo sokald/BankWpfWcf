@@ -48,18 +48,18 @@ namespace BankWindowsWPF
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //ServiceReferenceToDataBaseBank2.Account NewAccount = new ServiceReferenceToDataBaseBank2.Account();
-            ServiceReference1.Account NewAccount = new ServiceReference1.Account();
+            //ServiceReference1.Account NewAccount = new ServiceReference1.Account();
+            
+            ////NewAccount.NrAccount1 = null;
+            //NewAccount.FirstName1 = TextBoxFirstName.Text;
+            //NewAccount.LastName1 = TextBoxLastName.Text;
+            //NewAccount.City1 = TextBoxCity.Text;
+            //NewAccount.Street1 = TextBoxStreet.Text;
+            //NewAccount.NrHouse1 = Int32.Parse(TextBoxNrHouse.Text);
+            //NewAccount.PostCode1 = Int32.Parse(TextBoxPostCode.Text.ToString());
+            //NewAccount.AccountBalance1 = Int32.Parse(TextBoxAccountBallance.Text.ToString());
 
-            //NewAccount.NrAccount1 = null;
-            NewAccount.FirstName1 = TextBoxFirstName.Text;
-            NewAccount.LastName1 = TextBoxLastName.Text;
-            NewAccount.City1 = TextBoxCity.Text;
-            NewAccount.Street1 = TextBoxStreet.Text;
-            NewAccount.NrHouse1 = Int32.Parse(TextBoxNrHouse.Text);
-            NewAccount.PostCode1 = Int32.Parse(TextBoxPostCode.Text.ToString());
-            NewAccount.AccountBalance1 = Int32.Parse(TextBoxAccountBallance.Text.ToString());
-
-            obj.SendAccount(NewAccount);
+            //obj.SendAccount(NewAccount);
             ShowData();
         }
 
@@ -88,11 +88,11 @@ namespace BankWindowsWPF
             string NrAccount = AccountSelect["NrAccount"].ToString();
 
             NewOperation.NrAccount1 = NrAccount;
-            NewOperation.Amount1 = int.Parse(TextBoxOperationAmount.ToString());
+            NewOperation.Amount1 = int.Parse(TextBoxOperationAmount.Text.ToString());
             NewOperation.DateTransaction1 = DateOperation.SelectedDate.Value.Date;
 
             obj.SendOperation(NewOperation);
-            ShowData();
+            //ShowData();
             //SelectAccount();
         }
     }

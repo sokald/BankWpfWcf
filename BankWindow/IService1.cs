@@ -99,7 +99,7 @@ namespace BankWindow
         DateTime DateTransaction;
 
         [DataMember]
-        public int NrAccount1
+        public string NrAccount1
         {
             get { return NrAccount; }
             set { NrAccount = value; }
