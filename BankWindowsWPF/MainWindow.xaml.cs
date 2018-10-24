@@ -48,18 +48,18 @@ namespace BankWindowsWPF
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //ServiceReferenceToDataBaseBank2.Account NewAccount = new ServiceReferenceToDataBaseBank2.Account();
-            //ServiceReference1.Account NewAccount = new ServiceReference1.Account();
-            
-            ////NewAccount.NrAccount1 = null;
-            //NewAccount.FirstName1 = TextBoxFirstName.Text;
-            //NewAccount.LastName1 = TextBoxLastName.Text;
-            //NewAccount.City1 = TextBoxCity.Text;
-            //NewAccount.Street1 = TextBoxStreet.Text;
-            //NewAccount.NrHouse1 = Int32.Parse(TextBoxNrHouse.Text);
-            //NewAccount.PostCode1 = Int32.Parse(TextBoxPostCode.Text.ToString());
-            //NewAccount.AccountBalance1 = Int32.Parse(TextBoxAccountBallance.Text.ToString());
+            BankWindow.Account NewAccount = new BankWindow.Account();
 
-            //obj.SendAccount(NewAccount);
+            //NewAccount.NrAccount1 = null;
+            NewAccount.FirstName1 = TextBoxFirstName.Text;
+            NewAccount.LastName1 = TextBoxLastName.Text;
+            NewAccount.City1 = TextBoxCity.Text;
+            NewAccount.Street1 = TextBoxStreet.Text;
+            NewAccount.NrHouse1 = Int32.Parse(TextBoxNrHouse.Text);
+            NewAccount.PostCode1 = Int32.Parse(TextBoxPostCode.Text.ToString());
+            NewAccount.AccountBalance1 = Int32.Parse(TextBoxAccountBallance.Text.ToString());
+
+            obj.SendAccount(NewAccount);
             ShowData();
         }
 
@@ -80,6 +80,21 @@ namespace BankWindowsWPF
             DataGridOperation.ItemsSource = ds.Tables[0].DefaultView;
         }
 
+        private void SelectAccount(string NrAccount)
+        {
+            //DataGrid gd = (DataGrid)sender;
+            //AccountSelect = gd.SelectedItem as DataRowView;
+            //string NrAccount = AccountSelect["NrAccount"].ToString();
+
+
+            DataSet ds = new DataSet();
+            //DataTable ds = new DataTable()
+            ds = obj.ShowOperation(NrAccount);
+
+            DataGridOperation.AutoGenerateColumns = true;
+            DataGridOperation.ItemsSource = ds.Tables[0].DefaultView;
+        }
+
         private void ButtonSaveOperation_Click(object sender, RoutedEventArgs e)
         {
             //ServiceReferenceToDataBaseBank2.Account NewAccount = new ServiceReferenceToDataBaseBank2.Account();
@@ -93,7 +108,7 @@ namespace BankWindowsWPF
 
             obj.SendOperation(NewOperation);
             //ShowData();
-            //SelectAccount();
+            SelectAccount(NrAccount);
         }
     }
 }
